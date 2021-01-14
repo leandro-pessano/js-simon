@@ -5,8 +5,11 @@
 var numeri = [];
 var indovinati = [];
 
-for (var i = 0; i < 5; i++) {
-  numeri.push(Math.floor(Math.random()*99)+1);
+while (numeri.length < 5) {
+  var numero = Math.floor(Math.random()*99)+1;
+  if (numeri.includes(numero) == false) {
+    numeri.push(numero)
+  }
 }
 alert('I numeri sono: ' + numeri);
 
@@ -18,6 +21,6 @@ setTimeout(function() {
     }
   }
   console.log('Hai indovinato ' + indovinati.length + ' numeri. E sono: ' + indovinati);
-}, 3000);
+}, 30000);
 
 console.log(numeri);
