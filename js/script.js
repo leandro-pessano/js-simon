@@ -15,12 +15,15 @@ alert('I numeri sono: ' + numeri);
 
 setTimeout(function() {
   for (var i = 0; i < 5; i++) {
-    var num = prompt('Inserisci numero');
-    if (num == numeri[i]) {
+    var num = parseInt(prompt('Inserisci un numero tra 1 e 99'));
+    if (numeri.includes(num) && indovinati.includes(num) == false) {
       indovinati.push(num);
+    } else if (num < 1 || num > 99 || isNaN(num)) {
+      alert('Devi inserire un numero tra 1 e 99');
+      i--;
     }
   }
   console.log('Hai indovinato ' + indovinati.length + ' numeri. E sono: ' + indovinati);
-}, 30000);
+}, 3000);
 
 console.log(numeri);
